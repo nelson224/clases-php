@@ -28,13 +28,16 @@ class CompleteRange
     //put your code here
     public static function build($param) 
     {
+        $param = str_replace('[', '', $param);
+        $param = str_replace(']', '', $param);
+        
         $arreglo = explode(',', $param);       
 
         $first = $arreglo[0];
         $last = $arreglo[count($arreglo)-1];
         $salida = self::_completar_rango($first, $last);
         
-        print( "Entrada: ".$param." Salida: ".$salida);
+        print( "Entrada: [".$param."] Salida: [".$salida."]");
         
     }
 
